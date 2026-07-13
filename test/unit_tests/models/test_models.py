@@ -2160,7 +2160,7 @@ def test_eegminer_plv_values_range():
     # Forward pass up to PLV computation
     x = eegminer.ensure_dim(input_tensor)
     x = eegminer.filter(x)
-    x = eegminer._apply_plv(x, n_chans=n_chans)
+    x = eegminer.feature_layer(x)
 
     # PLV values should be in [0, 1]
     assert torch.all(x >= 0.0) and torch.all(x <= 1.0), \
