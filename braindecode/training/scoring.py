@@ -425,9 +425,9 @@ def predict_trials(module, dataset, return_targets=True, batch_size=1, num_worke
             receptive field of the network.
         trial_targets: np.ndarray
             Ground-truth targets from the dataset in a 2-dimensional array
-            (n_trials x n_targets). The number of targets depends on the
-            decoding paradigm and can be either a single value, multiple
-            values, or a sequence.
+            (n_trials x n_targets). Only returned when ``return_targets=True``.
+            The number of targets depends on the decoding paradigm and can be
+            either a single value, multiple values, or a sequence.
     """
     # Ensure the model is in evaluation mode
     module.eval()
